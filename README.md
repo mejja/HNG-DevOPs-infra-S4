@@ -63,7 +63,7 @@ AWS_REGION=us-east-1
 
 ## Deployment Instructions
 
-1. **Clone this repository:**
+1. **Git cloning :**
 
    ```bash
    git clone https://github.com/yourusername/yourrepo.git
@@ -72,7 +72,7 @@ AWS_REGION=us-east-1
 
 2. **Ensure the `.env` file is configured correctly.**
 
-3. **Run the deployment with Terraform:**
+3. **Deployment with Terraform:**
 
    ```bash
    terraform apply -auto-approve
@@ -104,8 +104,4 @@ terraform destroy -auto-approve
 - **DNS/Routing Issues:**  
   Confirm that your DNS records and Traefik configuration correctly route requests to your services.
 
----
-
-Happy deploying!
-```
 
