@@ -1,0 +1,26 @@
+---
+- name: Clone the repository
+  become: true
+  git:
+    repo: "https://github.com/Donkross360/DevOps-Stage-4.git"
+    dest: /home/ubuntu/todo
+    version: main
+    force: yes
+
+- name: Set correct permissions for acme.json
+  become: true
+  file:
+    path: /home/ubuntu/todo/letsencrypt/acme.json
+    state: touch
+    mode: '0600'
+
+- name: Create docker network
+  become: true
+  shell: |
+    docker network create devops
+
+- name: Run Docker Compose
+  become: true
+  command:
+    cmd: docker compose up -d
+    chdir: /home/ubuntu/todo
